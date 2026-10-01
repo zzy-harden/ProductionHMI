@@ -15,6 +15,7 @@ find_package(Qt6 REQUIRED COMPONENTS Core Widgets)
 
 add_library(ProductionHMI_core STATIC
     src/core/config/ProjectConfigLoader.cpp
+    src/communication/modbus/ModbusCodec.cpp
 )
 
 target_include_directories(ProductionHMI_core PUBLIC src)
@@ -43,4 +44,11 @@ if(BUILD_TESTING)
     target_link_libraries(test_ProjectConfigLoader PRIVATE ProductionHMI_core Qt6::Test)
 
     add_test(NAME ProjectConfigLoader COMMAND test_ProjectConfigLoader)
+
+    add_executable(test_ModbusCodecEncode
+        tests/communication/modbus/test_ModbusCodecEncode.cpp
+    )
+    target_link_libraries(test_ModbusCodecEncode PRIVATE ProductionHMI_core Qt6::Test)
+
+    add_test(NAME ModbusCodecEncode COMMAND test_ModbusCodecEncode)
 endif()
