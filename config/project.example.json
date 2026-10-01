@@ -1,0 +1,72 @@
+{
+  "device": {
+    "id": "plc_001",
+    "name": "产线一号 PLC",
+    "ip": "127.0.0.1",
+    "port": 5020,
+    "unitId": 1,
+    "timeoutMs": 1000,
+    "retryCount": 2
+  },
+  "tags": [
+    {
+      "id": "temperature",
+      "name": "设备温度",
+      "registerType": "holding",
+      "address": 100,
+      "dataType": "Float32",
+      "byteOrder": "ABCD",
+      "scale": 1.0,
+      "offset": 0.0,
+      "unit": "℃",
+      "writable": false,
+      "scanPeriodMs": 200,
+      "alarm": {
+        "enabled": true,
+        "high": 80.0,
+        "highRecover": 75.0,
+        "low": 5.0,
+        "lowRecover": 8.0,
+        "delayMs": 3000
+      }
+    },
+    {
+      "id": "motor_speed",
+      "name": "主轴转速",
+      "registerType": "holding",
+      "address": 110,
+      "dataType": "UInt16",
+      "byteOrder": "ABCD",
+      "scale": 1.0,
+      "offset": 0.0,
+      "unit": "rpm",
+      "writable": true,
+      "scanPeriodMs": 200,
+      "writeRange": {
+        "min": 0.0,
+        "max": 3000.0
+      },
+      "alarm": {
+        "enabled": true,
+        "high": 2800.0,
+        "highRecover": 2700.0,
+        "low": 0.0,
+        "lowRecover": 50.0,
+        "delayMs": 1000
+      }
+    },
+    {
+      "id": "running",
+      "name": "运行状态",
+      "registerType": "input",
+      "address": 120,
+      "dataType": "Bit",
+      "byteOrder": "ABCD",
+      "scale": 1.0,
+      "offset": 0.0,
+      "unit": "状态",
+      "writable": false,
+      "scanPeriodMs": 100
+    }
+  ]
+}

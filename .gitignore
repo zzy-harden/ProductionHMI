@@ -1,0 +1,38 @@
+# CMake
+/build/
+/cmake-build-*/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+
+# Qt Creator
+*.user
+*.user.*
+
+# Visual Studio
+.vs/
+*.VC.db
+*.VC.VC.opendb
+
+# Binaries
+*.exe
+*.dll
+*.lib
+*.pdb
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+
+# Runtime data
+*.db
+*.sqlite
+*.sqlite3
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
