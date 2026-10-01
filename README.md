@@ -11,6 +11,7 @@
 - [`T02：核心领域模型`](docs/tasks/T02-核心领域模型.md)
 - [`T03：JSON 配置加载`](docs/tasks/T03-JSON配置加载.md)
 - [`T04：Modbus 请求编码`](docs/tasks/T04-Modbus请求编码.md)
+- [`T05：Modbus 响应解析`](docs/tasks/T05-Modbus响应解析.md)
 
 学习顺序建议：**任务笔记 → 接口/头文件 → 实现 → 测试 → PR 的 Files changed**。
 
@@ -29,8 +30,7 @@
 - T02：核心领域模型 ✅
 - T03：JSON 工程配置加载 ✅
 - T04：Modbus TCP 请求编码器 ✅
-
-T04 已通过 Windows GitHub Actions 验证：Qt 6.8.3 + MSVC 2022 x64 下完成 CMake 配置、编译和自动测试。
+- T05：Modbus TCP 响应解析器——代码与测试已完成，等待 Windows CI 验收
 
 项目严格按照 `docs/执行计划.md` 的任务顺序开发；当前任务验证失败时先修复，不携带已知失败进入后续任务。
 
