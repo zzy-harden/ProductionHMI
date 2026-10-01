@@ -2,6 +2,18 @@
 
 面向自动化产线设备的 Windows HMI 上位机项目。
 
+## 快速学习入口
+
+如果你对 C++ 工程、Qt、Modbus 还不熟，建议先从：
+
+- [`docs/tasks/README.md`](docs/tasks/README.md)：任务学习索引
+- [`T01：工程骨架`](docs/tasks/T01-工程骨架.md)
+- [`T02：核心领域模型`](docs/tasks/T02-核心领域模型.md)
+- [`T03：JSON 配置加载`](docs/tasks/T03-JSON配置加载.md)
+- [`T04：Modbus 请求编码`](docs/tasks/T04-Modbus请求编码.md)
+
+学习顺序建议：**任务笔记 → 接口/头文件 → 实现 → 测试 → PR 的 Files changed**。
+
 ## 当前技术栈
 
 - C++17
