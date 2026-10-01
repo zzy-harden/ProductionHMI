@@ -30,7 +30,9 @@
 - T02：核心领域模型 ✅
 - T03：JSON 工程配置加载 ✅
 - T04：Modbus TCP 请求编码器 ✅
-- T05：Modbus TCP 响应解析器——代码与测试已完成，等待 Windows CI 验收
+- T05：Modbus TCP 响应解析器 ✅
+
+T05 已通过 Windows GitHub Actions 验证：Qt 6.8.3 + MSVC 2022 x64 下完成 CMake 配置、编译和全部自动测试。
 
 项目严格按照 `docs/执行计划.md` 的任务顺序开发；当前任务验证失败时先修复，不携带已知失败进入后续任务。
 
