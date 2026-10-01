@@ -51,4 +51,11 @@ if(BUILD_TESTING)
     target_link_libraries(test_ModbusCodecEncode PRIVATE ProductionHMI_core Qt6::Test)
 
     add_test(NAME ModbusCodecEncode COMMAND test_ModbusCodecEncode)
+
+    add_executable(test_ModbusCodecDecode
+        tests/communication/modbus/test_ModbusCodecDecode.cpp
+    )
+    target_link_libraries(test_ModbusCodecDecode PRIVATE ProductionHMI_core Qt6::Test)
+
+    add_test(NAME ModbusCodecDecode COMMAND test_ModbusCodecDecode)
 endif()

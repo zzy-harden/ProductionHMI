@@ -27,6 +27,7 @@
 | [T02](./T02-核心领域模型.md) | 核心领域模型 | `enum class`、`variant`、`optional`、TagDefinition/TagValue、数据质量 |
 | [T03](./T03-JSON配置加载.md) | 配置驱动 | JSON → 强类型对象、格式校验与业务校验、错误返回 |
 | [T04](./T04-Modbus请求编码.md) | Modbus TCP 请求编码 | 寄存器、功能码、MBAP、Transaction ID、大端序、逐字节测试 |
+| [T05](./T05-Modbus响应解析.md) | Modbus TCP 响应解析 | MBAP Length、请求响应匹配、异常响应、错误分类、Payload 校验 |
 
 ---
 
@@ -48,12 +49,13 @@ src/core/config/
 tests/core/config/
    ↓
 
-T04
+T04 / T05
 src/communication/modbus/ModbusCodec.*
 tests/communication/modbus/test_ModbusCodecEncode.cpp
+tests/communication/modbus/test_ModbusCodecDecode.cpp
 ```
 
-你可以把目前项目理解成四层逐步长出来：
+你可以把目前项目理解成五步逐渐长出来：
 
 ```text
 能构建和启动
@@ -62,10 +64,12 @@ tests/communication/modbus/test_ModbusCodecEncode.cpp
    ↓
 能从配置文件生成业务对象
    ↓
-能把 Modbus 业务请求编码成协议字节
+能把 Modbus 请求编码成协议字节
+   ↓
+能验证并解析 PLC 返回的 Modbus 响应
 ```
 
-下一步才会进入 Modbus 响应解析、PLC 模拟器和真实 TCP 会话。
+下一阶段会进入 PLC 模拟器和真实 TCP 会话，把目前的“纯协议逻辑”接到真正的网络收发上。
 
 ---
 
@@ -73,7 +77,8 @@ tests/communication/modbus/test_ModbusCodecEncode.cpp
 
 - PR #1：集中包含了早期 T01~T03 的工程整理；因此这三个任务无法在 Git 历史中完全做到一任务一个 PR。
 - PR #2：T04，可以直接通过 `Files changed` 查看本任务的增量。
-- 从后续任务开始：坚持“一任务一 PR + 一份中文学习记录 + 自动测试 + 中文任务复盘”。
+- PR #3：补齐 T01~T04 学习记录。
+- 从 T05 开始：坚持“一任务一 PR + 一份中文学习记录 + 自动测试 + 中文任务复盘”。
 
 重点看 PR 的：
 
